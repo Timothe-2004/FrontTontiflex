@@ -180,13 +180,14 @@ const LoanRequestDetailPage = () => {
 
       const result = await processApplication(loanRequest.id, processData);
       
-      if (result.success) {
+      // Considérer la réussite si aucune erreur n'a été levée
+      if (result?.demande) {
         setLoanRequest(result.demande);
-        toast.success("Demande traitée avec succès");
-        
-        // Rediriger après succès
-        setTimeout(() => router.push('/dashboards/dashboard-supervisor/loan-requests'), 1500);
       }
+      toast.success("Demande traitée avec succès");
+      
+      // Rediriger après succès
+      setTimeout(() => router.push('/dashboards/dashboard-supervisor/loan-requests'), 1500);
     } catch (error: any) {
       console.error('Erreur lors du traitement:', error);
       toast.error(error.message || 'Erreur lors du traitement');
