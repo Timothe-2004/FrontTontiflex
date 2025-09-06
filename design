@@ -1,0 +1,1091 @@
+Vous êtes chargé de concevoir les maquettes complètes pour une application web nommée TontiFlex, une plateforme de digitalisation des tontines et comptes épargne au Bénin, avec une interface responsive, moderne, intuitive, épurée et ergonomique. Le design doit s’inspirer du site Djekoi pour la page d’accueil (header minimaliste, héro percutante, sections fluides, CTA clairs), tout en adoptant un thème vert (palette : vert émeraude #2E7D32, vert clair #4CAF50, vert pâle #C8E6C9 pour accents, neutres blanc #FFFFFF et gris clair #F5F5F5), un effet de glassmorphism léger (transparence subtile, flou 5-10px) et des bento grids pour structurer les layouts.
+
+Contexte et objectifs
+
+TontiFlex digitalise la gestion des tontines et comptes épargne pour les Systèmes Financiers Décentralisés (SFD) au Bénin. La plateforme cible :
+
+
+
+
+
+Particuliers : Clients souhaitant rejoindre des tontines, gérer cotisations, retraits, comptes épargne et prêts.
+
+
+
+SFD : Institutions cherchant une gestion numérique optimisée.
+
+
+
+Fonctionnalités : Inscription, adhésion tontines, cotisations/retraits, comptes épargne, prêts, intégration Mobile Money (MTN, Moov), notifications SMS, conformité BCEAO.
+
+
+
+Contexte béninois : Focus SMS (pas d’email), Mobile Money, multi-SFD, interface simple pour utilisateurs peu familiers avec le numérique.
+
+Exigences esthétiques
+
+
+
+
+
+Thème visuel :
+
+
+
+
+
+Palette : Vert émeraude (#2E7D32) pour éléments principaux (sidebar, headers), vert clair (#4CAF50) pour actions (boutons, liens), vert pâle (#C8E6C9) pour fonds/accents, neutres (blanc #FFFFFF, gris clair #F5F5F5).
+
+
+
+Typographie :
+
+
+
+
+
+Principale : Archivo (Google Fonts, sans-serif, géométrique) pour corps, menus, labels (14-16px, Regular/Medium) pour lisibilité.
+
+
+
+Secondaire : Chillax (si disponible dans Stitch) pour titres (24-36px, Medium/Bold) et CTA, pour chaleur. Fallback : Archivo Bold.
+
+
+
+Hiérarchie : Titres (h1 : 32-36px, h2 : 24px), corps (16px), sous-textes (12-14px).
+
+
+
+Icônes : Minimalistes, monochrome ou bicolore (vert/blanc), coins arrondis, 24-32px.
+
+
+
+Glassmorphism :
+
+
+
+
+
+Verre dépoli (opacité 0.1-0.3, flou 5-10px) sur cartes, modales, navigation.
+
+
+
+Bordures blanches subtiles, ombres légères (box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)).
+
+
+
+Bento grids :
+
+
+
+
+
+Grilles modulaires : sections rectangulaires, marges 8-16px.
+
+
+
+Cartes avec coins arrondis (8px), espacements internes 16px, fond blanc/vert pâle, glassmorphism optionnel.
+
+
+
+Responsivité :
+
+
+
+
+
+Mobile (320px+), tablette (768px+), desktop (1024px+).
+
+
+
+Mobile : Layout une colonne, boutons tactiles (min. 48px), sidebar collapsible (hamburger).
+
+
+
+Ergonomie :
+
+
+
+
+
+Navigation : Barre latérale (desktop) ou hamburger (mobile), icônes claires, labels Archivo 16px.
+
+
+
+Boutons CTA : Vert clair #4CAF50, texte blanc (Chillax 16px), hover vert émeraude #2E7D32, padding 12px, coins arrondis (6px).
+
+
+
+Messages d’erreur/notifications : Pop-up ou bandeau, texte clair (Archivo 14px), actions correctives.
+
+Pages et composants à concevoir
+
+Concevez les maquettes pour les pages suivantes, en respectant les fonctionnalités du cahier des charges et les rôles (Client, Agent SFD, Superviseur SFD, Administrateur SFD, Administrateur plateforme). Intégrez bento grids et glassmorphism.
+
+1. Page d’accueil (non connecté)
+
+
+
+
+
+Objectif : Attirer particuliers (rejoindre tontines) et SFD (gérer tontines/épargne), inciter à l’inscription (particuliers) ou contact (SFD). Inspirée de Djekoi : header minimaliste, héro percutante, sections fluides, CTA clairs.
+
+
+
+Composants :
+
+
+
+
+
+Header : Fixe, centré (inspiré Djekoi), logo TontiFlex (vert émeraude #2E7D32), boutons "S’inscrire" (particuliers, vert clair #4CAF50) et "Contactez-nous" (SFD, vert clair #4CAF50), typographie Chillax 16px.
+
+
+
+Section héro :
+
+
+
+
+
+Gauche : Titre percutant ("Digitalisez vos tontines et épargnes avec TontiFlex", Chillax 36px), sous-titre ("Rejoignez une tontine ou gérez vos SFD en toute simplicité", Archivo 16px), CTA "S’inscrire" (particuliers) et "Contactez-nous" (SFD, vert clair #4CAF50, Chillax 16px).
+
+
+
+Droite : Collage Pinterest (4-6 photos) de personnes utilisant leur téléphone (ex. : Mobile Money, consultation tontines), coins arrondis (8px), cadre glassmorphism (opacité 0.2, flou 8px).
+
+
+
+Mobile : Titre/sous-titre en haut, collage en bas (grille 2 colonnes).
+
+
+
+Fond : Blanc ou vert pâle #C8E6C9, contraste inspiré de Djekoi.
+
+
+
+Section fonctionnalités : Bento grid (4-6 cartes, 2-3 colonnes) :
+
+
+
+
+
+"Adhérer à une tontine" (particuliers).
+
+
+
+"Gérer votre épargne" (particuliers).
+
+
+
+"Demander un prêt" (particuliers).
+
+
+
+"Centraliser la gestion SFD" (SFD).
+
+
+
+"Suivi et rapports" (SFD).
+
+
+
+Carte : Icône (24px), titre (Chillax 20px), description (Archivo 14px), fond blanc/vert pâle, glassmorphism.
+
+
+
+Section "Comment ça marche" :
+
+
+
+
+
+4 étapes : "Inscrivez-vous", "Choisissez une tontine", "Payez via Mobile Money", "Gérez vos SFD".
+
+
+
+Bento grid : Carte glassmorphism par étape (opacité 0.2, flou 8px), icône (32px), titre (Chillax 18px), texte (Archivo 14px).
+
+
+
+Mobile : Empilement vertical.
+
+
+
+Fond alternant (blanc/vert pâle) comme Djekoi.
+
+
+
+Section plan de tarification (SFD) :
+
+
+
+
+
+Texte : "Optimisez la gestion de vos tontines avec un plan personnalisé" (Chillax 20px).
+
+
+
+Carte glassmorphism : Avantages (gestion centralisée, statistiques, conformité BCEAO, Archivo 14px), CTA "Contactez-nous" (vert clair #4CAF50, Chillax 16px).
+
+
+
+Section FAQ :
+
+
+
+
+
+Deux onglets : "Particuliers" (ex. : "Comment rejoindre une tontine ?", "Quels frais ?") et "SFD" (ex. : "Comment intégrer mon SFD ?", "Quels rapports ?").
+
+
+
+Accordéon ou bento grid, cartes glassmorphism, typographie Archivo 14px.
+
+
+
+Section CTA :
+
+
+
+
+
+Deux cartes côte à côte :
+
+
+
+
+
+Particuliers : "Inscrivez-vous maintenant" (vert clair #4CAF50, Chillax 16px, lien vers page 2).
+
+
+
+SFD : "Contactez-nous pour créer votre compte" (vert clair #4CAF50, Chillax 16px, lien vers formulaire contact).
+
+
+
+Mobile : Cartes empilées.
+
+
+
+Footer : Liens utiles (À propos, Contact, Mentions légales), fond vert émeraude, texte blanc, Archivo 14px.
+
+
+
+Design : Fond blanc/vert pâle alternant (inspiré Djekoi), héro avec collage Pinterest, bento grids avec glassmorphism, typographie Archivo/Chillax.
+
+2. Page d’inscription client
+
+
+
+
+
+Objectif : Inscription des particuliers (nom, prénom, téléphone, adresse, profession, mot de passe).
+
+
+
+Composants :
+
+
+
+
+
+Gauche : Image pleine hauteur (ex. : personne utilisant Mobile Money, teintes vertes), coins arrondis (8px), cadre glassmorphism (opacité 0.2, flou 8px).
+
+
+
+Droite : Formulaire dans carte glassmorphism : champs texte (Archivo 16px), sélecteur profession, bouton "S’inscrire" (vert clair #4CAF50, Chillax 16px), instructions (Archivo 14px).
+
+
+
+Pop-up confirmation (SMS envoyé), fond glassmorphism.
+
+
+
+Message consentement données (conformité BCEAO).
+
+
+
+Design : Deux colonnes (desktop), mobile : image en haut, formulaire en bas. Typographie : Chillax pour titre, Archivo pour champs.
+
+3. Page de connexion
+
+
+
+
+
+Objectif : Authentification pour tous les rôles.
+
+
+
+Composants :
+
+
+
+
+
+Gauche : Image pleine hauteur (ex. : interface TontiFlex sur téléphone, teintes vertes), coins arrondis (8px), cadre glassmorphism.
+
+
+
+Droite : Formulaire dans carte glassmorphism : numéro de téléphone, mot de passe (Archivo 16px), bouton "Se connecter" (vert clair #4CAF50, Chillax 16px), lien "Mot de passe oublié" (SMS-based, Archivo 14px).
+
+
+
+Design : Deux colonnes (desktop), mobile : image en haut, formulaire en bas. Typographie : Chillax pour titre, Archivo pour champs.
+
+4. Tableau de bord client
+
+
+
+
+
+Objectif : Afficher informations et actions client.
+
+
+
+Composants :
+
+
+
+
+
+Sidebar (détaillée ci-dessous).
+
+
+
+Contenu principal (bento grid) :
+
+
+
+
+
+Carte "Tontines actives" : Liste par SFD, solde, bouton "Voir détails" (vert clair #4CAF50, lien vers page 17).
+
+
+
+Carte "Comptes épargne" : Liste par SFD, solde, bouton "Dépôt/Retrait".
+
+
+
+Carte "Prêts en cours" : Statut, échéances, bouton "Rembourser".
+
+
+
+Carte "Historique" : Transactions (cotisations, retraits) par mois/semaine, filtre (Archivo 14px).
+
+
+
+Bouton "Créer compte épargne" ou "Adhérer à tontine" (Chillax 16px).
+
+
+
+Sidebar :
+
+
+
+
+
+Objectif : Navigation intuitive, accès aux pages dédiées.
+
+
+
+Composants :
+
+
+
+
+
+Logo : TontiFlex en haut, vert émeraude #2E7D32 sur fond blanc/vert pâle #C8E6C9, glassmorphism optionnel.
+
+
+
+Navigation principale :
+
+
+
+
+
+Tableau de bord (icône maison, 24px, lien vers page 4).
+
+
+
+Mes tontines (icône groupe, lien vers page 16).
+
+
+
+Comptes épargne (icône coffre-fort, lien vers page 8).
+
+
+
+Mes prêts (icône document, lien vers page 9).
+
+
+
+Historique (icône horloge, lien vers page 18).
+
+
+
+Notifications (icône cloche, badge pour non-lues, lien vers page 14).
+
+
+
+Actions clés :
+
+
+
+
+
+Adhérer à une tontine (icône plus, lien vers page 5).
+
+
+
+Créer compte épargne (icône coffre-fort avec plus, lien vers page 8).
+
+
+
+Demander prêt (icône document avec flèche, visible si éligible, lien vers page 9).
+
+
+
+Profil et paramètres :
+
+
+
+
+
+Mon profil (icône personne, lien vers page 15).
+
+
+
+Déconnexion (icône flèche sortie).
+
+
+
+Design sidebar :
+
+
+
+
+
+Fond : Vert émeraude #2E7D32, icônes/textes blancs ou vert clair #4CAF50.
+
+
+
+Typographie : Archivo 16px pour labels, Chillax 18px pour logo/titre si disponible.
+
+
+
+Glassmorphism : Optionnel pour fond ou élément actif (opacité 0.2, flou 8px).
+
+
+
+Responsive : Collapsible en menu hamburger sur mobile, icônes seules, labels au survol/click.
+
+
+
+Interaction : Élément actif surligné en vert clair #4CAF50, hover transition douce (0.3s).
+
+
+
+Design global : Grille bento (2-4 colonnes), cartes glassmorphism (opacité 0.2, flou 8px), typographie Archivo/Chillax.
+
+5. Page d’adhésion à une tontine
+
+
+
+
+
+Objectif : Rejoindre une tontine.
+
+
+
+Composants :
+
+
+
+
+
+Formulaire dans carte glassmorphism : Sélecteur SFD/tontine, montant mise journalière (Archivo 16px), upload pièce d’identité.
+
+
+
+Affichage limites min/max SFD (Archivo 14px).
+
+
+
+Bouton "Soumettre" (vert clair #4CAF50, Chillax 16px) avec pop-up confirmation (SMS).
+
+
+
+Design : Formulaire centré, instructions claires (Archivo 14px), progression visuelle (étapes numérotées).
+
+6. Page de gestion des cotisations
+
+
+
+
+
+Objectif : Effectuer une cotisation pour une tontine spécifique.
+
+
+
+Composants :
+
+
+
+
+
+Formulaire dans carte glassmorphism : Sélecteur tontine/SFD, champ nombre de mises, calcul montant (Archivo 16px).
+
+
+
+Sélecteur Mobile Money (MTN/Moov).
+
+
+
+Bouton "Payer" (vert clair #4CAF50, Chillax 16px) avec confirmation SMS.
+
+
+
+Historique cotisations (bento grid, cartes glassmorphism).
+
+
+
+Design : Carte centrale pour paiement, historique en grille bento, typographie Archivo.
+
+7. Page de demande de retrait
+
+
+
+
+
+Objectif : Soumettre retrait.
+
+
+
+Composants :
+
+
+
+
+
+Formulaire dans carte glassmorphism : Montant, numéro Mobile Money (Archivo 16px).
+
+
+
+Solde disponible affiché (Archivo 14px).
+
+
+
+Bouton "Demander" (vert clair #4CAF50, Chillax 16px) avec pop-up statut.
+
+
+
+Design : Formulaire épuré, message d’erreur clair (Archivo 14px) si solde insuffisant.
+
+8. Page de gestion de compte épargne
+
+
+
+
+
+Objectif : Créer/gérer compte épargne.
+
+
+
+Composants :
+
+
+
+
+
+Bouton "Créer compte épargne" (vert clair #4CAF50, Chillax 16px).
+
+
+
+Formulaire : Upload pièce d’identité, photo (Archivo 16px).
+
+
+
+Section gestion : Dépôt/retrait Mobile Money, historique (bento grid, cartes glassmorphism).
+
+
+
+Design : Grille bento pour historique, formulaire glassmorphism.
+
+9. Page de demande de prêt
+
+
+
+
+
+Objectif : Soumettre prêt.
+
+
+
+Composants :
+
+
+
+
+
+Formulaire structuré (sections : personnelles, financières, prêt, garanties, consentement, Archivo 16px).
+
+
+
+Indicateur éligibilité (ex. : compte épargne > 3 mois, Archivo 14px).
+
+
+
+Bouton "Soumettre" (vert clair #4CAF50, Chillax 16px) avec pop-up statut.
+
+
+
+Design : Formulaire dans carte glassmorphism, progression visuelle.
+
+10. Tableau de bord Agent SFD
+
+
+
+
+
+Objectif : Gérer demandes en attente.
+
+
+
+Composants (bento grid) :
+
+
+
+
+
+Carte "Demandes d’adhésion" : Liste, boutons "Valider/Rejeter" (vert clair #4CAF50).
+
+
+
+Carte "Demandes de retrait" : Vérification fonds SFD.
+
+
+
+Carte "Comptes épargne en attente" : Validation documents.
+
+
+
+Carte "Historique actions".
+
+
+
+Design : Grille bento (2-4 colonnes), cartes glassmorphism, sidebar adaptée.
+
+11. Tableau de bord Superviseur SFD
+
+
+
+
+
+Objectif : Gérer prêts, scores fiabilité.
+
+
+
+Composants (bento grid) :
+
+
+
+
+
+Carte "Demandes de prêt" : Liste, boutons "Examiner/Éditer".
+
+
+
+Carte "Prêts en cours" : Suivi remboursements.
+
+
+
+Carte "Scores fiabilité" : Visualisation client.
+
+
+
+Carte "Rapports générés".
+
+
+
+Design : Grille bento, sidebar adaptée, typographie Archivo/Chillax.
+
+12. Tableau de bord Administrateur SFD
+
+
+
+
+
+Objectif : Configurer tontines, valider prêts.
+
+
+
+Composants (bento grid) :
+
+
+
+
+
+Carte "Configuration tontines" : Création/édition.
+
+
+
+Carte "Validation prêts" : Liste en attente.
+
+
+
+Carte "Statistiques SFD" : Graphiques (clients, transactions).
+
+
+
+Carte "Gestion utilisateurs" : Agents/superviseurs.
+
+
+
+Design : Grille bento, sidebar adaptée.
+
+13. Tableau de bord Administrateur plateforme
+
+
+
+
+
+Objectif : Gérer système global.
+
+
+
+Composants (bento grid) :
+
+
+
+
+
+Carte "Gestion utilisateurs" : Tous rôles.
+
+
+
+Carte "Statistiques globales" : Vue d’ensemble (SFD, clients, transactions).
+
+
+
+Carte "Logs système" : Audit trail.
+
+
+
+Design : Grille bento, sidebar adaptée.
+
+14. Page de notifications
+
+
+
+
+
+Objectif : Afficher historique notifications SMS.
+
+
+
+Composants :
+
+
+
+
+
+Liste notifications (date, contenu, statut, Archivo 14px).
+
+
+
+Filtre par type (inscription, paiement, etc.).
+
+
+
+Design : Liste dans carte glassmorphism, typographie Archivo.
+
+15. Page de profil utilisateur
+
+
+
+
+
+Objectif : Modifier infos personnelles.
+
+
+
+Composants :
+
+
+
+
+
+Formulaire dans carte glassmorphism : Nom, téléphone, adresse, mot de passe (Archivo 16px).
+
+
+
+Bouton "Mettre à jour" (vert clair #4CAF50, Chillax 16px).
+
+
+
+Design : Formulaire épuré, sidebar pour navigation.
+
+16. Page des tontines disponibles
+
+
+
+
+
+Objectif : Afficher toutes les tontines disponibles, accessible connectés ou non, détails au clic, option "Rejoindre" pour connectés.
+
+
+
+Composants :
+
+
+
+
+
+Header : Logo TontiFlex, boutons "S’inscrire"/"Se connecter" (non connectés) ou "Tableau de bord" (connectés).
+
+
+
+Liste des tontines : Bento grid (2-4 colonnes) :
+
+
+
+
+
+Nom tontine, SFD, mise journalière min/max, membres, durée cycle (Archivo 14px).
+
+
+
+Bouton "Voir détails" (vert clair #4CAF50, Chillax 16px).
+
+
+
+Si connecté : Bouton "Rejoindre" (vert clair #4CAF50, Chillax 16px, lien vers page 5).
+
+
+
+Si non connecté : "Rejoindre" désactivé, message "Connectez-vous pour rejoindre" (Archivo 14px).
+
+
+
+Page détails tontine (au clic) :
+
+
+
+
+
+Nouvelle page ou modale : Nom tontine, SFD, description, règles (mise, frais, cycle), statistiques (membres, fonds si public), durée.
+
+
+
+Bouton "Rejoindre" (connectés, lien page 5) ou "S’inscrire" (non connectés, lien page 2).
+
+
+
+Design : Carte glassmorphism, typographie Archivo 14px, titre Chillax 20px.
+
+
+
+Filtres : SFD, montant mise, durée cycle (Archivo 14px, sélecteurs dans carte glassmorphism).
+
+
+
+Design : Grille bento, cartes glassmorphism (opacité 0.2, flou 8px), fond blanc/vert pâle, responsive (mobile : 1-2 colonnes).
+
+17. Page de détails d’une tontine (client connecté)
+
+
+
+
+
+Objectif : Afficher détails d’une tontine active (clic sur "Tontines actives"), calendrier cotisations, historique, bouton "Cotiser".
+
+
+
+Composants :
+
+
+
+
+
+Sidebar : Identique au tableau de bord client.
+
+
+
+Contenu principal (bento grid) :
+
+
+
+
+
+Carte détails tontine :
+
+
+
+
+
+Nom tontine, SFD, mise journalière, date d’adhésion, solde actuel (Archivo 14px).
+
+
+
+Bouton "Cotiser" (vert clair #4CAF50, Chillax 16px, lien vers page 6).
+
+
+
+Typographie : Chillax 20px pour titre, Archivo 14px pour infos.
+
+
+
+Carte calendrier :
+
+
+
+
+
+Grille ou carrousel 12 mois, chaque mois avec 31 jours.
+
+
+
+Jours avec cotisations : Coche verte #4CAF50.
+
+
+
+Première cotisation mensuelle (commission SFD) : Icône étoile ou fond vert émeraude #2E7D32.
+
+
+
+Navigation mois par mois (flèches), mobile : 1 mois affiché, swipe.
+
+
+
+Typographie : Archivo 12px pour jours, Chillax 16px pour mois.
+
+
+
+Carte historique transactions :
+
+
+
+
+
+Liste transactions tontine (date, type, montant, statut, Archivo 14px).
+
+
+
+Filtres : Mois/semaine, type (cotisation, commission).
+
+
+
+Grille bento ou tableau, cartes glassmorphism.
+
+
+
+Design : Grille bento (2-3 colonnes desktop, 1 colonne mobile), cartes glassmorphism, fond blanc/vert pâle, typographie Archivo/Chillax.
+
+18. Page historique des transactions
+
+
+
+
+
+Objectif : Afficher historique complet (tontines, comptes épargne, prêts).
+
+
+
+Composants :
+
+
+
+
+
+Sidebar : Identique au tableau de bord client.
+
+
+
+Contenu principal :
+
+
+
+
+
+Liste transactions (date, type, montant, tontine/SFD, statut, Archivo 14px).
+
+
+
+Filtres : Tontine, compte épargne, prêt, période (mois/semaine).
+
+
+
+Grille bento ou tableau, cartes glassmorphism.
+
+
+
+Design : Grille bento (2-4 colonnes desktop, 1 colonne mobile), fond blanc/vert pâle, typographie Archivo.
+
+Contraintes supplémentaires
+
+
+
+
+
+Notifications SMS : Simuler notifications (pop-ups/bandeaux), texte concis en français, horodatage (Archivo 14px).
+
+
+
+Conformité BCEAO : Message consentement données dans formulaires sensibles (Archivo 14px).
+
+
+
+Accessibilité : Contraste élevé (WCAG 2.1), navigation clavier, labels clairs (Archivo).
+
+
+
+Performance : Chargement rapide (< 3s), images légères (max 500 Ko), animations fluides (hover 0.3s).
+
+
+
+Contexte béninois : Interface simple, focus SMS/Mobile Money, navigation intuitive.
+
+Livrables attendus
+
+
+
+
+
+Maquettes haute fidélité pour toutes pages (1 à 18).
+
+
+
+Variantes responsive (mobile 320px+, tablette 768px+, desktop 1024px+).
+
+
+
+Palette, typographie (Archivo/Chillax), icônes cohérentes.
+
+
+
+Fichiers exportables (Figma, PNG, ou autre format standard).
+
+
+
+Brève documentation des choix de design (ex. : inspiration Djekoi, bento grids, glassmorphism, calendrier).
+
+Exemple de style
+
+
+
+
+
+Carte bento : Fond blanc/vert pâle #C8E6C9, bordure subtile, coins arrondis (8px), glassmorphism (opacité 0.2, flou 8px).
+
+
+
+Bouton CTA : Vert clair #4CAF50, texte blanc (Chillax 16px), hover vert émeraude #2E7D32, padding 12px, coins arrondis (6px).
+
+
+
+Sidebar : Fond vert émeraude #2E7D32, icônes blanches (24px), labels Archivo 16px, collapsible mobile.
+
+Générez des maquettes capturant une plateforme financière moderne, inspirée de Djekoi pour la page d’accueil (header clair, héro percutante, sections fluides), adaptée au contexte béninois (simplicité, SMS, Mobile Money). Assurez une navigation intuitive pour tous, avec lisibilité (Archivo) et touche chaleureuse (Chillax).

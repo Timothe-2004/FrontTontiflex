@@ -1,0 +1,339 @@
+Cahier des charges TontiFlex
+Plateforme de digitalisation des tontines et comptes épargne - Contexte Béninois
+
+1. Présentation du projet
+1.1 Contexte
+TontiFlex est une plateforme web conçue pour digitaliser la gestion des tontines et des comptes épargne au sein des Systèmes Financiers Décentralisés (SFD) au Bénin. La plateforme permet aux clients de rejoindre des tontines de différents SFD, de gérer leurs cotisations, d'effectuer des retraits, de gérer des comptes épargne et de solliciter des prêts.
+1.2 Spécificités contextuelles béninoises
+
+Intégration Mobile Money : MTN Mobile Money et Moov Money (principaux opérateurs au Bénin)
+Communication par SMS : Toutes les notifications se font par SMS (pas d'email)
+Multi-SFD : Une personne peut rejoindre des tontines de plusieurs SFD différents
+Conformité réglementaire : Respect des directives de la BCEAO applicables au Bénin
+
+
+2. Architecture du système
+2.1 Structure multi-rôles
+RôleResponsabilitésClientS'inscrit, adhère aux tontines, effectue cotisations, demande retraits et prêtsAgent SFDValide inscriptions, retraits et comptes épargne de son SFDSuperviseur SFDGère les demandes de prêt, définit taux et échéances de son SFDAdministrateur SFDCrée les tontines de son SFD, valide les prêts, consulte statistiquesAdministrateur plateformeGère l'ensemble du système et les comptes utilisateurs
+2.2 Relations système
+
+Un SFD peut avoir une ou plusieurs tontines (généralement une)
+Un client peut rejoindre des tontines de plusieurs SFD différents
+Un client peut avoir un compte épargne par SFD
+Chaque SFD gère ses propres agents, superviseurs et administrateur
+
+
+3. Fonctionnalités détaillées
+3.1 Inscription et adhésion aux tontines
+3.1.1 Inscription client
+Informations requises :
+
+Nom et prénom
+Numéro de téléphone (obligatoire pour SMS)
+Adresse physique
+Profession
+Mot de passe
+
+Processus :
+
+Client soumet informations d'inscription
+Création immédiate du compte utilisateur
+Notification SMS de confirmation
+
+3.1.2 Adhésion à une tontine
+Informations requises :
+
+Choix du SFD et de la tontine
+Montant de la mise journalière
+Copie numérique de la pièce d'identité
+
+Processus :
+
+Client sélectionne SFD et tontine souhaitée
+Saisie du montant de mise journalière
+Vérification automatique des limites min/max du SFD
+Si conforme : transmission à l'agent SFD, sinon rejet avec SMS
+Agent vérifie pièce d'identité et correspondance des informations
+Si validé : SMS d'invitation à payer frais d'adhésion (1 000 à 5 000 FCFA)
+Paiement via Mobile Money
+Intégration automatique à la tontine après confirmation
+Statut passe de "en cours d'intégration" à "adhérent"
+
+3.2 Gestion des cotisations
+3.2.1 Effectuer une cotisation
+Processus :
+
+Client indique nombre de mises à effectuer
+Calcul automatique : nombre de mises × montant mise journalière
+Sélection opérateur Mobile Money (MTN ou Moov)
+Paiement via Mobile Money
+Confirmation et enregistrement en base
+Mise à jour du tableau de bord client
+
+3.2.2 Règles de gestion
+
+Mise journalière fixe définie lors de l'adhésion
+Cycles de 31 jours avec nouveau carnet automatique
+Première cotisation de chaque cycle = commission SFD
+Historique par mois/semaine dans le tableau de bord
+
+3.3 Demandes de retraits
+3.3.1 Processus de retrait
+
+Client sélectionne montant et numéro Mobile Money
+Vérification automatique du solde client
+Si insuffisant : rejet avec SMS explicatif
+Si suffisant : transmission à l'agent SFD concerné
+Agent vérifie fonds disponibles du SFD sur Mobile Money
+Si fonds disponibles : approbation et transfert
+Si fonds insuffisants : rejet avec SMS au client
+
+3.4 Comptes épargne
+3.4.1 Création de compte épargne
+Pré-requis : Compte utilisateur TontiFlex
+Informations requises :
+
+Copie numérique pièce d'identité
+Photo d'identité
+
+Processus :
+
+Demande via bouton dédié sur tableau de bord
+Soumission documents par le client
+Validation par agent SFD (vérification documents et correspondance infos)
+Si validé : SMS invitation paiement frais création
+Paiement via Mobile Money
+Activation automatique après confirmation
+Statut passe de "en cours de création" à "actif"
+
+3.4.2 Gestion du compte épargne
+
+Dépôts et retraits via Mobile Money
+Historique des transactions par mois/semaine
+Enregistrement en base de données transactionnelle
+
+3.5 Gestion des prêts
+3.5.1 Éligibilité
+Condition obligatoire : Compte épargne actif depuis plus de 3 mois
+3.5.2 Demande de prêt
+Informations du formulaire :
+
+Personnelles : nom, prénom, date naissance, adresse complète, situation familiale, téléphone, profession, justificatif identité
+Financières : revenu mensuel, charges mensuelles, historique bancaire
+Prêt : montant souhaité, durée, type, objet
+Garanties : type de garantie, caution si exigée
+Consentement : traitement données personnelles
+
+3.5.3 Processus d'évaluation
+
+Vérification éligibilité automatique
+Si inéligible : message pop-up explicatif
+Si éligible : soumission formulaire détaillé
+Transmission au superviseur SFD
+Examen par superviseur :
+
+Consultation score fiabilité (historique cotisations/dépôts)
+Édition formulaire si nécessaire
+Définition taux d'intérêt et échéances
+Génération rapport
+Transfert vers administrateur SFD si requis
+
+
+Si approuvé : décaissement en main propre à l'agence
+Génération tableau de remboursement
+Remboursements via Mobile Money
+Suivi automatique des paiements
+Notification SMS de clôture une fois soldé
+
+
+4. Spécifications techniques
+4.1 Intégrations requises
+
+API MTN Mobile Money pour transactions
+API Moov Money pour transactions
+Passerelle SMS pour notifications
+
+4.2 Fonctionnalités automatisées
+
+Vérification limites de mise
+Calcul montants cotisations
+Gestion cycles de 31 jours
+Génération calendriers personnalisés
+Vérification soldes et éligibilité
+Notifications SMS automatiques
+
+4.3 Tableaux de bord
+4.3.1 Client
+
+Tontines actives (par SFD)
+Soldes par tontine
+Historique cotisations et retraits
+Comptes épargne (par SFD)
+Prêts en cours
+Bouton création compte épargne
+
+4.3.2 Agent SFD
+
+Demandes d'adhésion en attente
+Demandes de retrait en attente
+Demandes comptes épargne en attente
+Historique des actions effectuées
+
+4.3.3 Superviseur SFD
+
+Demandes de prêt en attente
+Prêts en cours de remboursement
+Scores de fiabilité des clients
+Rapports générés
+
+4.3.4 Administrateur SFD
+
+Configuration des tontines
+Validation finale des prêts
+Statistiques du SFD (clients, transactions, etc.)
+Historique actions agents et superviseurs
+Gestion comptes utilisateurs du SFD
+
+
+5. Règles métier spécifiques
+5.1 Adhésion
+
+Montant mise conforme aux limites SFD
+Pièce d'identité valide et correspondante
+Frais d'adhésion obligatoires via Mobile Money
+
+5.2 Cotisations
+
+Mise journalière fixe par tontine
+Commission SFD = première cotisation de chaque cycle
+Enregistrement transactionnel obligatoire
+
+5.3 Retraits
+
+Solde client suffisant pour soumission
+Vérification fonds SFD par agent uniquement
+Validation manuelle obligatoire
+
+5.4 Comptes épargne
+
+Compte utilisateur préalable obligatoire
+Documents d'identité requis
+Frais de création obligatoires
+
+5.5 Prêts
+
+Compte épargne actif > 3 mois obligatoire
+Décaissement exclusivement en agence
+Remboursements via Mobile Money uniquement
+
+
+6. Notifications SMS
+6.1 Types de notifications
+
+Confirmation d'inscription
+Validation/rejet adhésion tontine
+Invitation paiement frais
+Confirmation transactions
+Rappels d'échéances
+Validation/rejet retraits
+Statuts comptes épargne
+Évolution demandes de prêt
+Clôture de prêt
+
+6.2 Format des SMS
+
+Expéditeur : TontiFlex
+Langue : Français
+Contenu : Concis et informatif
+Horodatage : Oui
+
+
+7. Sécurité et conformité
+7.1 Protection des données
+
+Chiffrement des données sensibles
+Conformité BCEAO
+Protection informations personnelles
+Consentement explicite collecte données
+
+7.2 Traçabilité
+
+Enregistrement toutes transactions
+Historique complet des actions utilisateurs
+Base de données transactionnelle
+Audit trail complet
+
+7.3 Sécurité transactions
+
+Intégration sécurisée Mobile Money
+Confirmation obligatoire avant exécution
+Vérifications automatiques multiples
+
+
+8. Contraintes MVP
+8.1 Fonctionnalités prioritaires
+
+Inscription clients
+Création et adhésion tontines
+Gestion cotisations et retraits
+Création et gestion comptes épargne
+Gestion basique des prêts
+
+8.2 Intégrations essentielles
+
+Mobile Money (MTN et Moov)
+Passerelle SMS
+Base de données transactionnelle
+
+8.3 Conformité obligatoire
+
+Réglementations BCEAO
+Sécurité et traçabilité
+Protection des données personnelles
+
+
+9. Livrables attendus
+9.1 Application web
+
+Interface responsive
+Tableaux de bord par rôle
+Formulaires de saisie
+Système de notifications
+
+9.2 Intégrations
+
+APIs Mobile Money opérationnelles
+Passerelle SMS configurée
+Base de données structurée
+
+9.3 Documentation
+
+Manuel utilisateur par rôle
+Guide d'administration
+Documentation technique
+Procédures de sauvegarde
+
+
+10. Critères d'acceptation
+10.1 Fonctionnels
+
+✅ Inscription et adhésion complètes
+✅ Cotisations et retraits opérationnels
+✅ Comptes épargne fonctionnels
+✅ Processus de prêt complet
+✅ Notifications SMS automatiques
+
+10.2 Techniques
+
+✅ Intégrations Mobile Money stables
+✅ Performance acceptable (< 3s par transaction)
+✅ Disponibilité 99% minimum
+✅ Sécurité des données garantie
+✅ Conformité réglementaire respectée
+
+10.3 Utilisabilité
+
+✅ Interface intuitive pour tous les rôles
+✅ Processus clairs et guidés
+✅ Messages d'erreur explicites
+✅ Support multi-SFD transparent
